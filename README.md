@@ -1,2 +1,2 @@
 # mokokoroom
-This site is loskark outfit simulator
+This site provides a Lostark dps simulator.
