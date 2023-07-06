@@ -1,7 +1,10 @@
-import axios, { AxiosInstance } from 'axios';
 //GET, POST 모듈화
+import axios, { AxiosInstance } from 'axios';
+
+
 const apiURL = process.env.REACT_APP_IP_ADDRESS;
 const apiKEY = process.env.REACT_APP_KEY;
+
 //GET
 export async function apiGET(url) {
     const fullURL = apiURL + url;

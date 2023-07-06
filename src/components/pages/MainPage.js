@@ -2,16 +2,17 @@ import React from 'react';
 import Nav from "../molecules/Nav";
 import axios from 'axios';
 import {apiGET} from "../../api/axiosInstance";
+import { animated, useSpring, useSprings } from "@react-spring/web"
 import {useEffect, useState} from "react";
 
 
 
 
 const MainPage = () => {
-
     const testFunc = () =>{
         console.log(apiGET("/armories/characters/coolguy/profiles"));
     }
+
     return (
         <div>
             <Nav></Nav>
