@@ -6,8 +6,9 @@ import TestPage from "./components/pages/TestPage";
 const App = () => {
   return (
       <Routes>
-        <Route path = '/' element={<MainPage />} />
-        <Route path = '/test' element={<TestPage />} />
+          <Route path = '/' element={<MainPage />} />
+          <Route path = '/main' element={<MainPage />} />
+          <Route path = '/test' element={<TestPage />} />
       </Routes>
   );
 }
