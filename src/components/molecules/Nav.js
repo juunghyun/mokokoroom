@@ -9,11 +9,12 @@ const Nav = () => {
                         <LogoImg src="/favicon-96x96.png" alt="nav 로고"/>
                     </Link>
                 </LogoDiv>
+
+            {/*메뉴 항목이 늘어나면 NavList 내부 NavUl에 추가*/}
                 <NavList>
                     <NavUl>
                         <NavA href="/test">테스트</NavA>
                     </NavUl>
-
                 </NavList>
         </TopNav>
     );
