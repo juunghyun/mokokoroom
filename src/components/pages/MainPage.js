@@ -33,7 +33,7 @@ const MainPage = () => {
     return (
         <MainDiv>
             <Nav></Nav>
-            {isScrolled ? <ScrollDownDiv><Nav></Nav></ScrollDownDiv>: null}
+            <ScrollDownDiv isScrolled={isScrolled}><Nav></Nav></ScrollDownDiv>
             <h1>메인페이지입니다</h1>
             <p>main page</p>
             <button onClick={testFunc}>클릭</button>
@@ -48,6 +48,9 @@ const ScrollDownDiv = styled.div`
   background-color: #7fda57;
   border-radius: 20px;
   padding-right: 10px;
+  overflow: hidden;
+  transition: transform 0.5s ease-in-out;
+  transform: translateY(${props => (props.isScrolled ? '10%' : '-200%')});
 `;
 
 const MainDiv = styled.div`
