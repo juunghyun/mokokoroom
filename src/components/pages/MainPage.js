@@ -45,7 +45,6 @@ export default MainPage;
 const ScrollDownDiv = styled.div`
   position: fixed;
   width: 98%;
-  background-color: #7fda57;
   border-radius: 20px;
   padding-right: 10px;
   overflow: hidden;

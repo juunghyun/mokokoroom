@@ -35,6 +35,7 @@ const LogoDiv = styled.div`
 
 const LogoImg = styled.img`
   width: 100%;
+  border-radius: 30px;
 `;
 
 const NavList = styled.ul`
@@ -58,7 +59,7 @@ const NavA = styled.a`
   height: 100%;
   &:hover {
     position: relative;
-    border-bottom: 1.3px solid #1d1d1d;
+    border-bottom: 1.6px solid #ffffff;
   }
 
   
