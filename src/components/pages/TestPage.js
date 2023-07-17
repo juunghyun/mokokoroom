@@ -80,9 +80,10 @@ const MainDiv = styled.div`
   padding: 5rem;
   display: grid;
   height: 200vh;
-  width: 90vw;
+  //width: 100vw;
   grid-template-columns: repeat(6,1fr);
   grid-template-rows: 90px 90px auto 80px;
+  
 `;
 
 
@@ -136,12 +137,13 @@ const ScrollDownNav = styled.nav`
   display: grid;
   background-color: #1d1d1d;
   color: #ffffff;
+  left:5%;
   width: 90vw;
   height:90px;
   grid-template-rows: 1fr;
   grid-template-columns: repeat(6,1fr);
   transition: transform 0.5s ease-in-out;
-  transform: translateY(${props => (props.isScrolled ? '10%' : '-600%')});
+  transform: translateY(${props => (props.isScrolled ? '-50%' : '-600%')});
   border:1px #1d1d1d solid;
   border-radius:20px;
 `;
