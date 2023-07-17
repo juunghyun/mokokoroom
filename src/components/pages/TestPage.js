@@ -50,7 +50,7 @@ const TestPage = () => {
 
             {/*사이트 최하단 Copyright 적는 부분*/}
             <CopyrightDiv>
-                <CopyrightText>1234</CopyrightText>
+                <CopyrightText>Copyright @2023 mokokoroom / contact : forcomfe81@gmail.com</CopyrightText>
             </CopyrightDiv>
 
         </MainDiv>

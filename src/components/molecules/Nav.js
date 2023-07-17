@@ -1,18 +1,18 @@
 import React from 'react';
-import {Link} from 'react-router-dom';
 import styled from 'styled-components';
+import {Link} from 'react-router-dom';
 
 const Nav = () => {
     return (
         <Nav1>
             <MenuDiv>
-                <div>DPS 측정</div>
+                    <NavA href="/dps">DPS 측정</NavA>
             </MenuDiv>
             <MenuDiv>
-                <div>악세 검색</div>
+                <NavA href="/acc">악세 검색</NavA>
             </MenuDiv>
             <MenuDiv>
-                <div>랭킹 검색</div>
+                    <NavA href="/dps">랭킹 검색</NavA>
             </MenuDiv>
         </Nav1>
     );
@@ -27,6 +27,8 @@ const Nav1 = styled.nav`
   grid-template-columns: repeat(6,1fr);
   grid-template-rows: 1fr;
   border: 1px #1d1d1d solid;
+  justify-content: center;
+  align-items: center;
   border-top: none;
 `;
 
@@ -36,5 +38,15 @@ const MenuDiv = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
-    border-right:1px #1d1d1d solid;
+  height: 60%;
+  border-right: 1px #1d1d1d solid;
+`;
+
+const NavA = styled.a`
+  text-decoration: none;
+  color: #1d1d1d;
+  &:hover {
+    transition: font-size 0.1s ease-in-out;
+    font-size:14px;
+  }
 `;
