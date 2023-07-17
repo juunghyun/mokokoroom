@@ -1,5 +1,4 @@
 import React from 'react';
-import Nav from "../molecules/Nav";
 import axios from 'axios';
 import {apiGET} from "../../api/axiosInstance";
 import { animated, useSpring, useSprings } from "@react-spring/web"
@@ -16,6 +15,11 @@ const MainPage = () => {
 
     const [isScrolled, setIsScrolled] = useState(false);
 
+    /*
+    		날짜: 2023/07/17 10:20 AM
+    		작성자: 이정현
+    		작성내용: scrollPosition이 window의 y축 스크롤값을 받아온 후 제한 스크롤에 따라서 드롭다운 메뉴가 펼치지기 위해 isScroll을 설정하는 함수
+    */
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
@@ -31,32 +35,8 @@ const MainPage = () => {
     }, []);
 
     return (
-        <MainDiv>
-            <Nav></Nav>
-            <ScrollDownDiv isScrolled={isScrolled}><Nav></Nav></ScrollDownDiv>
-            <h1>메인페이지입니다</h1>
-            <p>main page</p>
-            <button onClick={testFunc}>클릭</button>
-        </MainDiv>
-    );
+        <div>main</div>
+    )
 };
 
 export default MainPage;
-const ScrollDownDiv = styled.div`
-  position: fixed;
-  width: 98%;
-  border-radius: 20px;
-  padding-right: 10px;
-  overflow: hidden;
-  transition: transform 0.5s ease-in-out;
-  transform: translateY(${props => (props.isScrolled ? '10%' : '-200%')});
-`;
-
-const MainDiv = styled.div`
-  margin: 0;
-  max-width: 100%;
-  overflow-x: hidden;
-  display: flex;
-  flex-direction: column;
-  min-height: 1000vh;
-`;
