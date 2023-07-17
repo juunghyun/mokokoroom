@@ -3,6 +3,7 @@ import {Link} from 'react-router-dom';
 import styled from 'styled-components';
 import SearchOutlinedIcon from "@mui/icons-material/SearchOutlined";
 const SearchNav = () => {
+
     return (
         <SearchNav1>
             <LogoDiv>MOKOKOROOM</LogoDiv>

@@ -4,8 +4,10 @@ import {apiGET} from "../../api/axiosInstance";
 import { animated, useSpring, useSprings } from "@react-spring/web"
 import {useEffect, useState} from "react";
 import SearchNav from "../molecules/SearchNav";
+import Nav from "../molecules/Nav";
+import ScrollDownNav from "../molecules/ScrollDownNav";
 import styled from 'styled-components';
-import SearchOutlinedIcon from '@mui/icons-material/SearchOutlined';
+
 
 
 
@@ -34,35 +36,17 @@ const TestPage = () => {
         };
     }, []);
 
+
     return (
         <MainDiv>
 
             {/*최상단 모코코룸 - 캐릭터명 검색을 감싸는 Nav*/}
             <SearchNav></SearchNav>
 
-            <ScrollDownNav isScrolled={isScrolled}>
-                <MenuDiv>
-                    <div>DPS 측정</div>
-                </MenuDiv>
-                <MenuDiv>
-                    <div>악세 검색</div>
-                </MenuDiv>
-                <MenuDiv>
-                    <div>랭킹 검색</div>
-                </MenuDiv>
-            </ScrollDownNav>
+            <ScrollDownNav isScrolled={isScrolled}> </ScrollDownNav>
 
-            <Nav>
-                <MenuDiv>
-                    <div>DPS 측정</div>
-                </MenuDiv>
-                <MenuDiv>
-                    <div>악세 검색</div>
-                </MenuDiv>
-                <MenuDiv>
-                    <div>랭킹 검색</div>
-                </MenuDiv>
-            </Nav>
+            {/*최상단 바로 아래 메뉴 Nav*/}
+            <Nav></Nav>
 
             {/*사이트 최하단 Copyright 적는 부분*/}
             <CopyrightDiv>
@@ -97,24 +81,9 @@ const MainDiv = styled.div`
 
 
 
-//페이지 이동하는 nav. dps측정 / 악세 검색 / 랭킹 검색 의 우선 세가지 페이지 존재
-const Nav = styled.nav`
-  grid-row: 2;
-  grid-column: 1/-1;
-  display:grid;
-  grid-template-columns: repeat(6,1fr);
-  grid-template-rows: 1fr;
-  border: 1px #1d1d1d solid;
-  border-top: none;
-`;
 
-//페이지 이동하는 nav 내부의 각 메뉴를 표현할 div
-const MenuDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-    border-right:1px #1d1d1d solid;
-`;
+
+
 
 //페이지 최하단 copyright 작성을 위한 div 스타일
 const CopyrightDiv = styled.div`
@@ -131,22 +100,7 @@ const CopyrightText = styled.div`
     font-size: 20px;
 `;
 
-//scroll시 드롭다운되는 nav 스타일
-const ScrollDownNav = styled.nav`
-  position:fixed;
-  display: grid;
-  background-color: #1d1d1d;
-  color: #ffffff;
-  left:5%;
-  width: 90vw;
-  height:90px;
-  grid-template-rows: 1fr;
-  grid-template-columns: repeat(6,1fr);
-  transition: transform 0.5s ease-in-out;
-  transform: translateY(${props => (props.isScrolled ? '-50%' : '-600%')});
-  border:1px #1d1d1d solid;
-  border-radius:20px;
-`;
+
 
 
 
