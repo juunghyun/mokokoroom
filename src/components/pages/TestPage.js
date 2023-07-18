@@ -35,7 +35,7 @@ const TestPage = () => {
     }, []);
 
     return (
-        <div>test</div>
+        <div>test!</div>
     )
 };
 
