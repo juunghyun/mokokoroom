@@ -24,7 +24,7 @@ const RankPage = () => {
 
             {/*최상단 모코코룸 - 캐릭터명 검색을 감싸는 Nav*/}
             <SearchNav></SearchNav>
-
+            {/*스크롤 시 나오는 Nav 메뉴*/}
             <ScrollDownNav> </ScrollDownNav>
 
             {/*최상단 바로 아래 메뉴 Nav*/}
