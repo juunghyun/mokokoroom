@@ -25,7 +25,7 @@ const TestPage = () => {
     useEffect(() => {
         const handleScroll = () => {
             const scrollPosition = window.scrollY;
-            const scrollThreshold = 150; // 스크롤을 내린 후 Nav가 border-radius가 적용되는 위치
+            const scrollThreshold = 180; // 스크롤을 내린 후 Nav가 border-radius가 적용되는 위치
             setIsScrolled(scrollPosition > scrollThreshold);
         };
 
