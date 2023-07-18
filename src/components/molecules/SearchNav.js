@@ -36,7 +36,7 @@ const SearchNav = () => {
 
             {/*로고 버튼 누르면 홈으로*/}
             <LogoDiv>
-                <NavA href="/">MOKOKOROOM</NavA>
+                <NavA href="/main">MOKOKOROOM</NavA>
             </LogoDiv>
 
             {/*검색 버튼 검색 기능 제공*/}
