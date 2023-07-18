@@ -1,0 +1,23 @@
+@charset "utf-8";
+
+/*사용하고싶은 폰트를 여기에 추가해주세요!*/
+@font-face {
+    font-family: NoToSansKR-Black;
+    src: url("../../asset/fonts/NotoSansKR-Black.otf");
+}
+@font-face {
+    font-family: NoToSansKR-Lightk;
+    src: url("../../asset/fonts/NotoSansKR-Light.otf");
+}
+
+
+/*배너 폰트 스타일*/
+.first-line{
+    font-family: NoToSansKR-Black;
+    font-size:50px;
+}
+
+.second-line{
+    font-family: NoToSansKR-Light;
+    font-size:20px;
+}
