@@ -27,13 +27,13 @@ const ScrollDownNav = (props) => {
     return (
         <ScrollDownNav1 isScrolled={isScrolled}>
             <MenuDiv>
-                <div>DPS 측정</div>
+                <NavA href="/dps">DPS 측정</NavA>
             </MenuDiv>
             <MenuDiv>
-                <div>악세 검색</div>
+                <NavA href="/acc">악세 검색</NavA>
             </MenuDiv>
             <MenuDiv>
-                <div>랭킹 검색</div>
+                <NavA href="/dps">랭킹 검색</NavA>
             </MenuDiv>
         </ScrollDownNav1>
     );
@@ -64,4 +64,13 @@ const MenuDiv = styled.div`
   justify-content: center;
   align-items: center;
     border-right:1px #1d1d1d solid;
+`;
+
+const NavA = styled.a`
+  text-decoration: none;
+  color: #ffffff;
+  &:hover {
+    transition: font-size 0.1s ease-in-out;
+    font-size:14px;
+  }
 `;

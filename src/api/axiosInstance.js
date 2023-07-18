@@ -31,7 +31,7 @@ export async function apiPOST(url) {
                 'Authorization': `Bearer ${apiKEY}`
             }
         });
-        console.log(response.data);
+
         return response;
     }
     catch (error) {
