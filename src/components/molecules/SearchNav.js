@@ -62,7 +62,7 @@ const SearchNav = () => {
                 </SearchLoginIconImg>
                 <SearchLoginText>
                     { !isLogin ? (
-                        <div>로그인 아이디</div>) : <div>login</div>}
+                        <div>로그인 아이디</div>) : <div>Login</div>}
                 </SearchLoginText>
             </SearchLoginBox>
             

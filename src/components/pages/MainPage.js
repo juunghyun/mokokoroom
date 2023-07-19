@@ -61,8 +61,8 @@ const MainPage = () => {
             </MainBannerDiv>
 
             {/*진행중인 이벤트가 들어갈 grid div*/}
-            <EventDiv>
-            </EventDiv>
+            <RankDiv>
+            </RankDiv>
 
 
             {/*사이트 최하단 Copyright 적는 부분*/}
@@ -96,7 +96,7 @@ const MainBannerDiv = styled.div`
   border-top:none;
 `;
 
-const EventDiv= styled.div`
+const RankDiv= styled.div`
   grid-row:4;
   grid-column: 1/-1;
   display: grid;
