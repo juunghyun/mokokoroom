@@ -14,33 +14,26 @@ import {json} from "react-router-dom";
 
 const MainPage = () => {
 
-    const arr1=new Array();
-
+    const [contents, setContents] = useState("");
+    //객체 배열로 받음. [ {},{},{},...{}] 형식
     const getRankAPI = async () => {
         const data = await apiGET("/characters/%EC%B9%B4%EC%95%84%EC%95%88/siblings");
         setContents(data.data);
     }
 
-    const dataFetching = () => {
-        for (const obj of contents) {
-            const characterName = obj.CharacterName;
-            arr1.push(characterName);
-        }
+    const sortChar = () => {
+        const sortedContents = [ ...contents]; //useState가 관리하는 contents 복사
+        sortedContents.sort((a,b) => {
+            return (parseInt(b.ItemMaxLevel.replace(",", "")) - parseInt(a.ItemMaxLevel.replace(",", "")));
+        })
+
+        // 이름 순으로 정렬할 때의 소트과정
+        // sortedContents.sort((a,b) => {
+        //     return a.CharacterName.localeCompare(b.CharacterName);
+        // })
+        setContents(sortedContents);
     }
-
-    const dataFetching2 = (arr1) => {
-        return(
-            <div>
-                {arr1.map((name, index) => (
-                <span key={index}>{name}</span>))}
-            </div>
-        );
-    };
-
-    const [contents, setContents] = useState("");
-
-
-
+    // useEffect()
 
     return (
         <MainDiv>
@@ -64,13 +57,8 @@ const MainPage = () => {
 
             {/*진행중인 이벤트가 들어갈 grid div*/}
             <EventDiv>
-                <button >클릭</button>
-                <button >클릭2</button>
-                <button >클릭3</button>
-
-                <div>
-
-                </div>
+                <button onClick={getRankAPI}>api작동</button>
+                <button onClick={sortChar}>소트</button>
             </EventDiv>
 
 
