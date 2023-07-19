@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {useCallback} from 'react';
 import axios from 'axios';
 import {apiGET} from "../../api/axiosInstance";
 import { animated, useSpring, useSprings } from "@react-spring/web"
@@ -15,25 +15,30 @@ import {json} from "react-router-dom";
 const MainPage = () => {
 
     const [contents, setContents] = useState("");
-    //객체 배열로 받음. [ {},{},{},...{}] 형식
-    const getRankAPI = async () => {
-        const data = await apiGET("/characters/%EC%B9%B4%EC%95%84%EC%95%88/siblings");
-        setContents(data.data);
-    }
 
-    const sortChar = () => {
-        const sortedContents = [ ...contents]; //useState가 관리하는 contents 복사
-        sortedContents.sort((a,b) => {
-            return (parseInt(b.ItemMaxLevel.replace(",", "")) - parseInt(a.ItemMaxLevel.replace(",", "")));
-        })
+    /*
+    		날짜: 2023/07/19 3:26 PM
+    		작성자: 이정현
+    		작성내용: 객체 배열로 받음. [ {},{},{},...{}] 형식, 최대 템 레벨 기준으로 정렬. 이름 기준도 주석처리해놓음.
+    */
+    const getRankAPI = useCallback(async () => {
+        const data = await apiGET("/characters/%EC%B9%B4%EC%95%84%EC%95%88/siblings");
+        const sortedData = data.data;
 
         // 이름 순으로 정렬할 때의 소트과정
         // sortedContents.sort((a,b) => {
         //     return a.CharacterName.localeCompare(b.CharacterName);
         // })
-        setContents(sortedContents);
-    }
-    // useEffect()
+
+        //최대 템 레벨 기준으로 정렬
+        sortedData.sort((a,b) => {
+            return (parseInt(b.ItemMaxLevel.replace(",", "")) - parseInt(a.ItemMaxLevel.replace(",", "")));
+        })
+        setContents(sortedData);
+        console.log("api는 작동댔습니다.");
+    },[setContents]);
+
+    useEffect(() => { getRankAPI(); },[getRankAPI] );
 
     return (
         <MainDiv>
@@ -57,8 +62,6 @@ const MainPage = () => {
 
             {/*진행중인 이벤트가 들어갈 grid div*/}
             <EventDiv>
-                <button onClick={getRankAPI}>api작동</button>
-                <button onClick={sortChar}>소트</button>
             </EventDiv>
 
 
